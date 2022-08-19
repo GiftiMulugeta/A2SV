@@ -4,13 +4,13 @@ class Solution(object):
         y=[]
         for i in range(1,n+1):
             if (i%3==0 and i%5 ==0):
-                y.append("fizzbuzz")
+                y.append("Fizzbuzz")
             elif(i%3==0):
-                y.append("fizz")
+                y.append("Fizz")
             elif i%5==0:
-                y.append("buzz")
+                y.append("Buzz")
             else:
                 y.append(str(i))
-        print(y)
+        return y
 x=Solution()
 x.fizzBuzz(3)
