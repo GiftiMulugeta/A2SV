@@ -1,16 +1,16 @@
 class Solution(object):
     
     def fizzBuzz(self, n):
-        y=[]
+        empty_array=[]
         for i in range(1,n+1):
             if (i%3==0 and i%5 ==0):
-                y.append("FizzBuzz")
+                empty_array.append("FizzBuzz")
             elif(i%3==0):
-                y.append("Fizz")
+                empty_array.append("Fizz")
             elif i%5==0:
-                y.append("Buzz")
+                empty_array.append("Buzz")
             else:
-                y.append(str(i))
-        return y
-x=Solution()
-x.fizzBuzz(3)
+                empty_array.append(str(i))
+        return empty_array
+fizzbuzz=Solution()
+fizzbuzz.fizzBuzz(3)
