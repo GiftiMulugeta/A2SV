@@ -1,5 +1,5 @@
 
-class gradesyystem(object):
+class gradesystem(object):
     def gradingsystem(self,grade):
         grades=[]
         for i in range(grade):
@@ -117,4 +117,5 @@ class gradesyystem(object):
         print (grades)
             
 
-                
+grading=gradesystem()
+grading.gradingsystem(68)
