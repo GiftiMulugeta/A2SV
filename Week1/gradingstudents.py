@@ -1,121 +1,45 @@
+#!/bin/python3
 
-class gradesystem(object):
-    def gradingsystem(self,grade):
-        grades=[]
-        for i in range(grade):
-            if grade>40 and grade<45:
-                nexts=45
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>45 and grade<50:
-                nexts=50
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>50 and grade<55:
-                nexts=55
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>55 and grade<60:
-                nexts=60
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>60 and grade<65:
-                nexts=65
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>65 and grade<70:
-                nexts=70
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>70 and grade<75:
-                nexts=75
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>75 and grade<80:
-                nexts=80
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>80 and grade<85:
-                nexts=85
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>85 and grade<90:
-                nexts=90
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>90 and grade<95:
-                nexts=95
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            elif grade>95 and grade<100:
-                nexts=100
-                if nexts-grade<3:
-                    grade=nexts
-                    grades.append(grade)
-                    break
-                else:
-                    grades.append(grade)
-                    break
-            else:
-                grades.append(grade)
-                break
-        print (grades)
-            
+import math
+import os
+import random
+import re
+import sys
 
-grading=gradesystem()
-grading.gradingsystem(68)
+#
+# Complete the 'gradingStudents' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts INTEGER_ARRAY grades as parameter.
+#
+
+def gradingStudents(grades):
+    array = []
+    for i in grades:
+        rem = i % 5
+        sub = 5 - rem
+        if(sub < 3 and i >= 38):
+            i = i + sub
+            array.append(i)
+        elif (sub > 3 and i >= 38):
+            array.append(i)
+        else:
+            array.append(i)
+    return array
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    grades_count = int(input().strip())
+
+    grades = []
+
+    for _ in range(grades_count):
+        grades_item = int(input().strip())
+        grades.append(grades_item)
+
+    result = gradingStudents(grades)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
